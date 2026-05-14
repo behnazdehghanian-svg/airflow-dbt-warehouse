@@ -1,0 +1,19 @@
+# Credentials - NEVER push to GitHub
+keys/
+*.json
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Data files
+data/
+
+# Airflow
+airflow_home/logs/
+airflow_home/airflow.db
+
+# Mac
+.DS_Store
