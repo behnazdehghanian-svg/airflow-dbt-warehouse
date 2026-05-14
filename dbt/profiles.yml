@@ -1,12 +1,11 @@
-
 airflow_dbt_warehouse:
   target: dev
   outputs:
     dev:
       type: bigquery
       method: service-account
-      project: behnaz-data-engineer-portfolio
+      project: "{{ env_var('GCP_PROJECT_ID') }}"
       dataset: retail_analytics
-      keyfile: /Users/behnazdehghanian/Documents/airflow-dbt-warehouse/keys/behnaz-data-engineer-portfolio-553f4e1cc4b4.json
+      keyfile: "{{ env_var('GOOGLE_APPLICATION_CREDENTIALS') }}"
       threads: 1
       timeout_seconds: 300

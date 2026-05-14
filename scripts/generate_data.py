@@ -63,8 +63,8 @@ if __name__ == "__main__":
     generate_products().to_csv("data/products.csv", index=False)
 
     # Orders - append today's orders
+    # Orders - save as partitioned file for today
     orders = generate_orders()
-    file_exists = os.path.exists("data/orders.csv")
-    orders.to_csv("data/orders.csv", mode='a', header=not file_exists, index=False)
+    orders.to_csv(f"data/orders_{today}.csv", index=False)
 
-    print(f"✅ Done! Added 50 orders for {today}")
+    print(f"✅ Done! Saved 50 orders to data/orders_{today}.csv")
